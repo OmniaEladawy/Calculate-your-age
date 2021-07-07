@@ -5,45 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate your age</title>
-    <style>
-        body {
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        h1 {
-            color: red;
-            margin-bottom: 50px;
-        }
-
-        input[type="date"] {
-            height: 25px;
-            border: 2px solid #000;
-            cursor: pointer;
-        }
-
-        input[type="button"] {
-            padding: 5px 10px;
-            color: red;
-            background-color: transparent;
-            border: 2px solid #000;
-            cursor: pointer;
-        }
-
-        input[type="button"]:hover {
-            border: 2px solid red;
-            color: #000;
-        }
-
-        #age {
-            margin-top: 50px;
-            font-size: 30px;
-        }
-
-        b {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1> Calculate Your Age </h1>
@@ -51,31 +13,6 @@
     <input type="button" value="Calculate age" onclick="myFun()">
     <div id="age"></div>
     
-    <script>    
-        function myFun(){
-            var inp = document.getElementById("dt").value ;
-            var today = new Date();
-            var birthday = new Date(inp);
-            var year = today.getFullYear() - birthday.getFullYear();
-            if(today.getMonth() >= birthday.getMonth()){
-                var month = today.getMonth() - birthday.getMonth();
-            }else{
-                var month = (today.getMonth() - birthday.getMonth()) + 12;
-                var year = year - 1;
-            }
-            if(today.getDate() >= birthday.getDate()){
-                var day = today.getDate() - birthday.getDate();
-            }else{
-                var day = (today.getDate() - birthday.getDate()) + 31;
-                if(today.getMonth() === birthday.getMonth()){
-                    var month = 11;
-                    var year = year - 1;
-                }else{
-                    var month = month - 1 ;
-                }
-            }
-            document.getElementById("age").innerHTML = "<b> Your age is </b><br><br> " + year + " <b> years </b> " + month + " <b> months </b> " + day + "<b> days </b>"
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
